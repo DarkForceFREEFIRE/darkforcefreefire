@@ -95,24 +95,29 @@
 </head>
 <body>
     <h1>DARK FORCE Chams V 4.33</h1>
-    <button class="button" onclick="redirectToPanel()">Download Chams</button>
+    <button class="button" onclick="playSoundAndRedirect('panel')">Download Chams</button>
     
     <div class="button-group">
-        <button class="button-social" onclick="redirectToDiscord()">Download Free Fire</button>
-        <button class="button-social" onclick="redirectToWhatsapp()">Recommended Files</button>
+        <button class="button-social" onclick="playSoundAndRedirect('discord')">Download Free Fire</button>
+        <button class="button-social" onclick="playSoundAndRedirect('whatsapp')">Recommended Files</button>
     </div>
 
+    <audio id="click-sound" src="https://github.com/DarkForceFREEFIRE/darkforcefreefire/raw/main/Windows%20Background.wav" preload="auto"></audio>
+
     <script type="text/javascript">
-        function redirectToPanel() {
-            window.location.href = "https://github.com/DarkForceFREEFIRE/Server-Updates/raw/main/ChamsV4.33.exe";
-        }
-
-        function redirectToDiscord() {
-            window.location.href = "https://download1320.mediafire.com/igsf0kxsu5kglLqrgMEBMHphcFfvUagoGZL-eTKeJnM4KiQeIs0TSzz8Vp9adJ0UDRslbJiiKWY2gTMiRJUF7DfooR7hGp3TZoI_d8_Rad2GjM-ymiZ3adPBADO89H2jSlv6z898cwL1bCa9sE55xOJpNgxRize1P6dIhyy1elfZpAk/l51z2ythuiiuq2z/FreeFire+AXEL.zip";
-        }
-
-        function redirectToWhatsapp() {
-            window.location.href = "https://download2358.mediafire.com/xmnii873i1sgc_Ab0SFNGpmTDH7i3S8QTg324FW1lSfuXTJ5YmBU77ZKCMifvLjVR3wfbRRGQ9B8jMwSBrxw0qpPphfpnKsnEl6HGOJ6fATOCVQEQRBlkd2MB0EKicgNy6_Tct5GF1vHbWsKbwXAdYNZN6c-Fmqm3zyQrPl6SwEuNsc/a91j62nm1t47udx/Requerimientos.rar";
+        function playSoundAndRedirect(destination) {
+            var sound = document.getElementById('click-sound');
+            sound.play();
+            
+            setTimeout(function() {
+                if (destination === 'panel') {
+                    window.location.href = "https://github.com/DarkForceFREEFIRE/Server-Updates/raw/main/ChamsV4.33.exe";
+                } else if (destination === 'discord') {
+                    window.location.href = "https://download1320.mediafire.com/igsf0kxsu5kglLqrgMEBMHphcFfvUagoGZL-eTKeJnM4KiQeIs0TSzz8Vp9adJ0UDRslbJiiKWY2gTMiRJUF7DfooR7hGp3TZoI_d8_Rad2GjM-ymiZ3adPBADO89H2jSlv6z898cwL1bCa9sE55xOJpNgxRize1P6dIhyy1elfZpAk/l51z2ythuiiuq2z/FreeFire+AXEL.zip";
+                } else if (destination === 'whatsapp') {
+                    window.location.href = "https://download2358.mediafire.com/xmnii873i1sgc_Ab0SFNGpmTDH7i3S8QTg324FW1lSfuXTJ5YmBU77ZKCMifvLjVR3wfbRRGQ9B8jMwSBrxw0qpPphfpnKsnEl6HGOJ6fATOCVQEQRBlkd2MB0EKicgNy6_Tct5GF1vHbWsKbwXAdYNZN6c-Fmqm3zyQrPl6SwEuNsc/a91j62nm1t47udx/Requerimientos.rar";
+                }
+            }, 500); // Delay redirection to allow sound to play
         }
     </script>
 </body>
