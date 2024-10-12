@@ -8,7 +8,7 @@
             font-family: Segoe UI, Arial, Helvetica, sans-serif;
             padding: 0;
             margin: 0;
-            background-image: url("https://github.com/DarkForceFREEFIRE/darkforcefreefire/blob/main/myst.jpg");
+            background-image: url "https://wallpapercave.com/wp/wp9990665.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -22,7 +22,9 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+        
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px); /* Apply blur effect */
             opacity: 0; /* Start invisible */
             transition: opacity 0.5s ease; /* Fade in transition */
         }
@@ -108,7 +110,7 @@
 
             <div class="modal-footer">
                 <a href="https://github.com/DarkForceFREEFIRE/WalkerREGEDITS/raw/refs/heads/main/Walker%20Xitres.exe" class="button" download>Download CSharp</a>
-                <a href="https://nightly.link/Rectify11/Installer/suites/10728067738/artifacts/1898434868" class="button" download>Download C++</a>
+                <a href="#" class="button" onclick="confirmDownload('https://status.rectify11.net', 'Python')">Download C++</a>
                 <a href="#" class="button" onclick="confirmDownload('https://status.rectify11.net', 'Python')">Download Python</a>
                 <a href="#" class="button button-large">Recommended files for Csharp and C++</a> <!-- New Button -->
             </div>
