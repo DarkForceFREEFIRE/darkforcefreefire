@@ -102,7 +102,6 @@
             position: relative;
             background-color: rgba(42, 42, 42, 0.719);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.733);
-            
             margin: auto;
             padding: 0;
             top: 50%;
@@ -299,14 +298,6 @@
             }, 10); 
         }
 
-        function hideModal() {
-            const modal = document.getElementById('downloadModal');
-            document.getElementById('modalContent').classList.remove('show');
-            modal.style.opacity = '0';
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 500);
-        }
 
         document.getElementById('username').addEventListener('input', () => {
             document.getElementById('error').style.display = 'none';
