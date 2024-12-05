@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from rectify11.net/faq by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Dec 2024 15:17:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Rectify11 Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.png" />
+    <script src="../code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="assets/js/sitecore0f77.js?v=NQaph3mag2SiGjDTat2BiKKF_EVDDM25AV_1fOEggog"></script>
+    <meta name="description" content="Rectify11 is a Windows modification that makes Windows 11 more consistent created by the Rectify11 Team. ">
+
+    <!--TODO: move this back to blogs view once issue is fixed-->
+    <script src="../cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+</head>
+
+<body>
+    <div class="layout">
+        <header class="header">
+            <div class="logoContainer">
+                <button id="toggle" class="icon-button toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars" id="toggle"></i></button>
+                <div id="logoBox">
+                    <img src="assets/img/logo.svg" alt="Logo" width="50" height="50"/>
+                    <h1 class="logoText">Rectify11</h1>
+                </a>
+            </div>
+            <div class="right-skew">
+                <!--<div class="auth-actions">
+                    <div class="user-area">
+                        <img src="/assets/img/guest.png" alt="default user icon">
+                        <span class="guest-text">Guest</span>
+                    </div>
+                    <button class="auth-button login">Sign In</button>
+                    <button class="auth-button signup">Sign Up</button>
+                </div>-->
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="index.html" onclick="event.preventDefault();doNavNavigation('home')" navtarget="home"><i class="icon-dashboard"></i>Home</a>
+                        </li>
+                        <!--<li><a href="/forum" onclick="event.preventDefault();doNavNavigation('forum')" navtarget="forum"><i class="icon-files"></i>Forum</a></li>-->
+                        <li><a href="blog.html" onclick="event.preventDefault();doNavNavigation('blog')" navtarget="blog"><i class="icon-messages"></i>Blog</a>
+                        </li>
+                        <li><a href="faq.html" onclick="event.preventDefault();doNavNavigation('faq')" navtarget="faq"><i class="icon-question"></i>FAQ</a></li>
+                        <li><a href="about.html" onclick="event.preventDefault();doNavNavigation('about')" navtarget="about"><i class="icon-analytics"></i>About</a>
+                        </li>
+                        <li><button class="download-button forcesmallbtn"><i class="fa-solid fa-download"></i>
+                                <p style="display:inline;">Download v3.2 (170MB)</p>
+                            </button></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div id="mainView" class="main-content">
+                <noscript>Javascript is currently required for this application.</noscript>
+                
+                <main id="PageContent">
+    <p>Last updated: 10/30/2024</p>
+    <br />
+
+    <h2>What is Rectify11?</h2>
+    <p>
+        Windows 11, by default has inconsistencies on it's UI elements (especially in dark mode). Rectify11 is a piece
+        of software that aims for a more consistent Windows 11 experience.
+    </p>
+
+    <br />
+    <h2>Is Rectify11 safe to use?</h2>
+    <p>
+        Yes, it is not malware and won't affect performance as long as your apps work fine.</p>
+        Detailed explanation: Please make sure you download Rectify11 from its official sources (<a
+            href="index.html">https://rectify11.net/</a>, <a
+            href="https://github.com/Rectify11/Installer/releases">https://github.com/Rectify11/Installer/releases</a>,
+        <a href="https://github.com/Rectify11/Installer/actions">https://github.com/Rectify11/Installer/actions</a>)
+        <p>ONLY and not from some random link.</p>
+        <p>NOTE: SecureUX ThemeTool is commonly flagged by antiviruses which Rectify11 uses</p>
+        <p>Make sure to turn off all antiviruses before installing Rectify11</p>
+        <p>Please read the "Some applications do not launch." section too.</p>
+        <p>We only support official Windows images, so please do not use a "debloated" ISO as those cause more problems than they fix.</p>
+    </p>
+
+    <br />
+    <h2>Will Rectify11 have an ISO image after version 2.5?</h2>
+    <p>
+        No, Rectify11 uses an installer that you have to install on top of your existing Windows installation.
+    </p>
+
+    <br />
+    <h2>Will I lose my data after installing Rectify11?</h2>
+    <p>
+        No, unless you reinstalled Windows
+    </p>
+    <br />
+    <h2>What are the minimum system requirements to run Rectify11?</h2>
+    <p>
+    <ul>
+        <li>
+            Windows 11 to Windows 11 24H2 is currently supported. Note that context menus may be screwed up if you select Nilesoft shell in the installer.
+        </li>
+    </ul>
+    </p>
+    <br />
+    <h2>Some applications do not launch.</h2>
+    <p>For some reason, some software does not like Rectify11 modifying icons. For ESET antivirus, uncheck msi.dll icon
+        in the installer. It is also said that reWASD does not work for some reason.</p>
+    <br />
+    <h2>My themes look messed up.</h2>
+    <p>There are multiple reasons for this problem.</p>
+    <br />
+    <h3>How to remove white and colored borders from File explorer or control panel.</h3>
+    <p>Open the Rectify11 installer, and patch shell32 and explorerframe</p>
+    <h3>My theme looks like a mess after pressing CTRL+ALT+DEL or when locking my PC.</h3>
+    <p>Download SecureUX ThemeTool and open it. There, look at the "Patcher" category and make sure "LogonUI hooked"
+        says Yes. If it says No, click Uninstall on the "Installation" category and make sure "Rename DefaultColors" and
+        "Hook LogonUI" are checked, then press "Install" and restart.</p>
+    <h3>My apps look like a mess.</h3>
+    <p>
+        Find MicaForEveryone's icon in your system tray and open it. A settings window should open. Click the + icon,
+        choose "Add process Rule", choose your app's executable file, then press "Add". A new option with your
+        application's name will appear on the sidebar.
+        Click that and set "Backdrop Type" to "None" and disable "Extend Frame into Client Area".
+    </p>
+    <p>If that doesn't work, open the Rectify11 control panel. Choose either Rectify11 Partial dark theme or Rectify11
+        light theme in the list. Press apply.</p>
+    <p>If that also didn't work, most likely the developer of the application hardcoded background color or text
+        color. Contact the application developer.</p>
+    <h3>My websites look messed up.</h3>
+    <p>
+        Mozilla Firefox: Go to Settings. In the General tab of the page, find "Override Firefox’s default colors for
+        text, website backgrounds, and links" text, click "Manage Colors". The "Colors" window will open. Uncheck "Use
+        system colors" and press OK.
+
+        Other browsers: Install the Stylus extension, and then apply this <a target="_blank"
+            href="https://raw.githubusercontent.com/WildByDesign/UserStyles/main/Rectify11.user.styl">userstyle</a>
+    </p>
+
+    <br />
+    <h2>Mica does not work</h2>
+    <p>There can be multiple causes for this problem.</p>
+    <br />
+    <h3>Make sure your settings are correct.</h3>
+    <p>
+        Make sure that "Transparency effects" on Windows Settings (under Personalization > Colors) is turned on.
+        After that, find MicaForEveryone's icon in your system tray and open it. A settings window should open. There, find
+        "Global Rule" and open it. Make sure "Extend Client into Frame Area" is enabled and "Backdrop Type" is set to
+        "Mica". Repeat for "explorer" as well.
+    </p>
+    <br />
+    <h3>The Mica colors look different from my "wallpaper".</h3>
+    <p>
+        It is because you are using Lively Wallpaper/Wallpaper Engine or other wallpaper apps. For this, you either have
+        to disable these apps or change the wallpaper to be similar to your Windows desktop wallpaper (under
+        Personalization > Wallpaper in the Windows Settings app).
+    </p>
+    <h3>Mica effects don't work properly on File Explorer.</h3>
+    <p>
+        This problem only happens on Windows 11, version 23H2 and above. The reason is some parts on the new File
+        Explorer like the toolbar, home page, gallery are all XAML-based. MicaForEveryone is not
+        designed to hook into XAML components and change the backdrop type. However, you can use <a href="https://github.com/Maplespe/ExplorerBlurMica">ExplorerBlurMica</a>
+    </p>
+
+    <br />
+    <h2>I don't like changes that Rectify11 did to my explorer, how to disable them and get rid of the hightlight
+        border.</h2>
+    <p>Don't select themes while installing/uninstall them. Also deselect ExplorerFrame.dll.mun from icons section.</p>
+    <br />
+
+    <h2>Gadgets are not working after installation and the gadget picker doesn't have any gadgets to choose from.</h2>
+    <p>Remove gadgets from control panel, and reinstall them from this link:
+        https://github.com/Rectify11/Gadgets/releases/tag/ESR1</p>
+    <br>
+    <p>This FAQ was mostly written by iniforce in Rectify11 discord.</p>
+    <br>
+</main>
+
+                <div class="footer">
+                    <p>© 2021-2024 The Rectify11 Team. Windows, Windows 11, and the Windows logo are registered trademarks of Microsoft Corporation.</p>
+                    <a href="privacy.html" onclick="event.preventDefault();doNavigation('privacy')">Privacy Policy</a>
+                    <a href="tos.html" onclick="event.preventDefault();doNavigation('tos')">Terms of Service</a>
+                    <p style="display: inline;">Version 1.0.0.1 - Production</p>
+                </div>
+            </div>
+            <div class="sidebar-right">
+
+                <div class="box posts">
+                    <div class="box-title">Latest Blog Posts</div>
+                    <div class="box-content" id="BlogsList">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="box-title">Find Rectify11 on</div>
+                    <div class="box-content">
+                        <a href="https://discord.gg/gsgu9GCtsk" target="_blank"><i
+                                class="fa-brands fa-discord navicon"></i>Discord</a>
+                        <a href="https://github.com/Rectify11/" target="_blank"><i
+                                class="fa-brands fa-github navicon"></i>GitHub</a>
+                        <a href="https://twitter.com/Rectify11Team" target="_blank"><i
+                                class="fa-brands fa-twitter navicon"></i>Twitter</a>
+                        <a href="https://youtube.com/search?q=Rectify11" target="_blank"><i
+                                class="fa-brands fa-youtube navicon"></i>YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Mirrored from rectify11.net/faq by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Dec 2024 15:17:36 GMT -->
+</html>

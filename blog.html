@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from rectify11.net/blog by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Dec 2024 15:17:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Rectify11 Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.png" />
+    <script src="../code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="assets/js/sitecore0f77.js?v=NQaph3mag2SiGjDTat2BiKKF_EVDDM25AV_1fOEggog"></script>
+    <meta name="description" content="Rectify11 is a Windows modification that makes Windows 11 more consistent created by the Rectify11 Team. ">
+
+    <!--TODO: move this back to blogs view once issue is fixed-->
+    <script src="../cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+</head>
+
+<body>
+    <div class="layout">
+        <header class="header">
+            <div class="logoContainer">
+                <button id="toggle" class="icon-button toggle" aria-label="Toggle navigation"><i class="fa-solid fa-bars" id="toggle"></i></button>
+                <div id="logoBox">
+                    <img src="assets/img/logo.svg" alt="Logo" width="50" height="50"/>
+                    <h1 class="logoText">Rectify11</h1>
+                </a>
+            </div>
+            <div class="right-skew">
+                <!--<div class="auth-actions">
+                    <div class="user-area">
+                        <img src="/assets/img/guest.png" alt="default user icon">
+                        <span class="guest-text">Guest</span>
+                    </div>
+                    <button class="auth-button login">Sign In</button>
+                    <button class="auth-button signup">Sign Up</button>
+                </div>-->
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="index.html" onclick="event.preventDefault();doNavNavigation('home')" navtarget="home"><i class="icon-dashboard"></i>Home</a>
+                        </li>
+                        <!--<li><a href="/forum" onclick="event.preventDefault();doNavNavigation('forum')" navtarget="forum"><i class="icon-files"></i>Forum</a></li>-->
+                        <li><a href="blog.html" onclick="event.preventDefault();doNavNavigation('blog')" navtarget="blog"><i class="icon-messages"></i>Blog</a>
+                        </li>
+                        <li><a href="faq.html" onclick="event.preventDefault();doNavNavigation('faq')" navtarget="faq"><i class="icon-question"></i>FAQ</a></li>
+                        <li><a href="about.html" onclick="event.preventDefault();doNavNavigation('about')" navtarget="about"><i class="icon-analytics"></i>About</a>
+                        </li>
+                        <li><button class="download-button forcesmallbtn"><i class="fa-solid fa-download"></i>
+                                <p style="display:inline;">Download v3.2 (170MB)</p>
+                            </button></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div id="mainView" class="main-content">
+                <noscript>Javascript is currently required for this application.</noscript>
+                
+                <main id="PageContent">
+    <div id="blogMainPage">
+        <h1>Welcome Walker Regedits Blog!</h1>
+        <div style="display: flex; margin-top: 50px;">
+            <h3 style="font-weight: 600;">Latest posts</h3>
+        </div>
+        <div class="main-blog-cont">
+            <!--<div class="main-blog-post">
+                <div class="main-blog-title">Title</div>
+                <div class="main-blog-date">Author, Date</div>
+                <div class="main-blog-content">Description</div>
+                <div class="main-blog-stats">
+                    <span class="info-eye"><i class="icon fas fa-eye"></i> 1k</span>
+                    <span class="info-likes"><i class="icon fas fa-thumbs-up"></i>1k</span>
+                    <span class="info-dislikes"><i class="icon fas fa-thumbs-down"></i>1k</span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <div id="blogViewPage">
+        <div class="blogHeader">
+            <i class="pageBackButton fa fa-arrow-left" id="blogPageBack"></i>
+            <h1 id="blogViewTitle">Blog view</h1>
+        </div>
+        <div class="main-blog-date" id="blogViewDate">Loading</div>
+        <div class="main-blog-stats">
+            <span class="info-eye"><i class="icon fas fa-eye"></i>
+                <p style="display:inline;" id="blogViewViews">30k</p>
+            </span>
+            <!--<span class="info-likes"><i class="icon fas fa-thumbs-up"></i> 99999</span>
+            <span class="info-dislikes"><i class="icon fas fa-thumbs-down"></i> 5</span>-->
+        </div>
+        <br>
+
+        <div id="blogRenderContent">Rendering blog contents, please wait</div>
+    </div>
+
+    <script>
+        viewData.onViewEnter = function () {
+            if (viewData.blogJson.length == 0) {
+                $(".main-blog-cont").text("No blogs to show.");
+                return;
+            }
+
+            var container = document.getElementsByClassName("main-blog-cont")[0];
+            container.innerHTML = ""; // clear out old data
+
+            document.getElementById("blogViewPage").style.display = "none";
+            document.getElementById("blogMainPage").style.display = "none";
+
+            var pgBack = document.getElementById("blogPageBack");
+            pgBack.onclick = function () {
+                viewData.showAllBlogsView();
+            }
+
+
+            viewData.blogJson.forEach(element => {
+                var post = document.createElement("div");
+                post.className = "main-blog-post";
+                post.setAttribute("r11-blogid", element.id);
+                var dateString = new Date(element.posted).toLocaleDateString();
+
+                var postTitle = document.createElement("div");
+                postTitle.className = "main-blog-title";
+                postTitle.innerText = element.title;
+
+                var postDate = document.createElement("div");
+                postDate.className = "main-blog-date";
+                postDate.innerText = dateString;
+
+                var postDesc = document.createElement("div");
+                postDesc.className = "main-blog-content";
+                postDesc.innerText = element.desc;
+
+                var postStats = document.createElement("div");
+                postStats.className = "main-blog-stats";
+
+                var viewsSpan = document.createElement("span");
+                viewsSpan.className = "info-eye";
+                var viewsIcon = document.createElement("i");
+                viewsIcon.className = "icon fas fa-eye";
+                var viewsValue = document.createElement("p");
+                viewsValue.innerText = element.viewCount;
+                viewsValue.style.display = "inline";
+
+                viewsSpan.appendChild(viewsIcon);
+                viewsSpan.appendChild(viewsValue);
+
+                postStats.appendChild(viewsSpan);
+
+                post.appendChild(postTitle);
+                post.appendChild(postDate);
+                post.appendChild(postDesc);
+                post.appendChild(postStats);
+
+                post.onclick = function (e) {
+                    viewData.showBlogView(element);
+                }
+
+                if (!isNaN(viewData.blogId) && element.id === viewData.blogId) {
+                    document.getElementById("blogMainPage").style.display = "none";
+
+                    viewData.showBlogView(element)
+                }
+
+                container.appendChild(post);
+            });
+
+            if (isNaN(viewData.blogId)) {
+                document.getElementById("blogMainPage").style.display = "block";
+            }
+        }
+
+        viewData.showAllBlogsView = function () {
+            document.getElementById("blogViewPage").style.display = "none";
+            document.getElementById("blogMainPage").style.display = "block";
+
+            if (window.location.pathname !== "blog/index.html")
+                history.pushState({}, "User Navigation", window.location.origin + "/blog")
+        }
+
+        viewData.showBlogView = async function (json) {
+            var dateString = new Date(json.posted).toLocaleDateString();
+            document.getElementById("blogMainPage").style.display = "none";
+            document.getElementById("blogViewPage").style.display = "block";
+
+            document.getElementById("blogViewTitle").innerText = json.title;
+            document.getElementById("blogViewDate").innerText = "By " + json.author + ", " + dateString;
+            document.getElementById("blogViewViews").innerText = json.viewCount;
+
+            document.getElementById('blogRenderContent').innerHTML = marked.parse(json.contents);
+
+            if (window.location.pathname !== "/blog/" + json.id)
+                history.pushState({}, "User Navigation", window.location.origin + "/blog/" + json.id);
+
+            //Blogs/{id}/Enter
+            if (!viewedBlogs.has(json.id)) {
+                viewedBlogs.set(json.id, true);
+
+                var response = await fetch("/api/Blogs/" + json.id + "/Enter", {
+                    method: "POST",
+                    body: JSON.stringify({}),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                });
+
+                if (response.ok) {
+                    const json = await response.json();
+                    if (json.result == "Ok") {
+                        // update view counter after we sent view
+
+                        document.getElementById("blogViewViews").innerText = json.resultingValue;
+                    }
+                }
+            }
+        }
+    </script>
+</main>
+
+                <div class="footer">
+                    <p>© 2021-2024 The Rectify11 Team. Windows, Windows 11, and the Windows logo are registered trademarks of Microsoft Corporation.</p>
+                    <a href="privacy.html" onclick="event.preventDefault();doNavigation('privacy')">Privacy Policy</a>
+                    <a href="tos.html" onclick="event.preventDefault();doNavigation('tos')">Terms of Service</a>
+                    <p style="display: inline;">Version 1.0.0.1 - Production</p>
+                </div>
+
+        </div>
+    </div>
+</body>
+
+
+<!-- Mirrored from rectify11.net/blog by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Dec 2024 15:17:36 GMT -->
+</html>
