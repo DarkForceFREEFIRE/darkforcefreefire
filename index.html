@@ -125,11 +125,28 @@
 
             <center>
                 <a href="https://www.mediafire.com/file/awvnb1dtphj0q7l/Walker+Regedits+V5.9.7z/file" download>
-                    <button class="download-button">
+                    <button class="download-button" id="downloadButton">
                       <p style="display:inline;">Download v5.9 [36.9MB]</p>
                     </button>
                   </a>                  
-            </center>
+
+
+
+                <!-- Audio for Sound Effect -->
+    <audio id="clickSound" src="https://github.com/DarkForceFREEFIRE/darkforcefreefire/raw/refs/heads/main/Windows%20Background.wav"></audio>
+
+    <!-- JavaScript to Play Sound -->
+    <script>
+        // Get the button and the audio element
+        const downloadButton = document.getElementById('downloadButton');
+        const clickSound = document.getElementById('clickSound');
+
+        // Add click event listener to play the sound
+        downloadButton.addEventListener('click', function() {
+            clickSound.play();
+        });
+    </script>
+            
         </div>
     </main>
 
